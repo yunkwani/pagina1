@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yunkwani.github.io/pagina1/sitemap.xml
