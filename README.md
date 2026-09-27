@@ -1,16 +1,16 @@
-# Little Wins — blog autónomo (finanzas personales / productividad)
+# StackPilot — autonomous blog (AI tools & SaaS for solopreneurs)
 
-Sitio estático (HTML plano, sin build) publicado gratis en GitHub Pages. Un agente programado de Claude Code escribe y publica un artículo nuevo automáticamente, sin usar ninguna API de pago.
+Static site (plain HTML, no build step) published for free on GitHub Pages. A scheduled Claude Code agent writes and publishes a new article automatically, without using any paid API.
 
-## Cómo funciona
-- `topics.json` guarda el nicho y la lista de temas pendientes/usados.
-- `AGENT_INSTRUCTIONS.md` es lo que sigue la sesión programada en cada ejecución.
-- Cada ejecución agrega un post en `posts/`, actualiza `index.html` y `sitemap.xml`, y hace `git push`.
+## How it works
+- `topics.json` stores the niche and the list of pending/used topics.
+- `AGENT_INSTRUCTIONS.md` is what the scheduled session follows on every run.
+- Each run adds a post under `posts/`, updates `index.html` and `sitemap.xml`, and pushes to GitHub.
 
-## Lo que falta por hacer tú (no puedo crear cuentas por ti)
-1. **Activar GitHub Pages**: en el repo, ve a *Settings → Pages → Source: Deploy from a branch → main / (root)*. En unos minutos el sitio queda visible en `https://yunkwani.github.io/pagina1/`.
-2. **Monetización con anuncios (opcional, cuando tengas tráfico)**: crea una cuenta gratuita en [Google AdSense](https://adsense.google.com), pide que aprueben el sitio, y agrega tu script de anuncios en `assets/` o directamente en el `<head>` de cada página.
-3. **Monetización con afiliados (opcional)**: únete a un programa de afiliados relacionado con finanzas/productividad (ej. Amazon Afiliados) y reemplaza las menciones genéricas de producto en los artículos por tus enlaces reales.
+## What's left for you to do (I can't create accounts for you)
+1. **Enable GitHub Pages**: in the repo, go to *Settings → Pages → Source: Deploy from a branch → main / (root)*. The site goes live at `https://yunkwani.github.io/pagina1/` within a few minutes.
+2. **Ad monetization (optional, once you have traffic)**: create a free [Google AdSense](https://adsense.google.com) account, request site approval, and add your ad script to `assets/` or directly in each page's `<head>`.
+3. **Affiliate monetization (optional)**: join an affiliate program relevant to AI tools/SaaS (e.g. individual tool affiliate programs, or a network like PartnerStack/Impact) and replace generic product mentions in articles with your real affiliate links.
 
-## Costo
-$0. Sin API keys, sin hosting de pago, sin dominio (usa el subdominio gratuito de GitHub Pages).
+## Cost
+$0. No API keys, no paid hosting, no custom domain (uses the free GitHub Pages subdomain).

@@ -1,20 +1,20 @@
-# Instrucciones para la publicación automática
+# Instructions for automatic publishing
 
-Este archivo lo lee la sesión programada de Claude Code en cada ejecución. No requiere ninguna API key: el propio Claude Code (con la suscripción del usuario) escribe el artículo, no un script externo de pago.
+This file is read by the scheduled Claude Code session on every run. No API key is needed: Claude Code itself (using the user's existing subscription) writes the article, not a paid external script.
 
-En cada ejecución:
+On every run:
 
-1. Lee `topics.json`. Toma el primer tema de `upcoming_topics`.
-2. Escribe un artículo nuevo en `posts/<slug-del-tema>.html`, siguiendo exactamente la estructura y estilo de `posts/como-hacer-presupuesto-mensual-simple.html` (mismo `<head>`, mismo `assets/style.css`, disclosure de afiliados al final, 500-800 palabras, tono práctico y directo, sin relleno).
-3. Mueve ese tema de `upcoming_topics` a `used_topics` en `topics.json`. Si `upcoming_topics` queda vacío, genera 10 temas nuevos dentro del mismo nicho (`niche` en `topics.json`) y agrégalos.
-4. Inserta una nueva entrada `<div class="post-list-item">` en `index.html`, justo antes del comentario `<!-- NUEVOS_POSTS -->`, enlazando al nuevo post.
-5. Agrega la URL del nuevo post a `sitemap.xml`.
-6. Ejecuta:
+1. Read `topics.json`. Take the first topic from `upcoming_topics`.
+2. Write a new article at `posts/<topic-slug>.html`, following the exact structure and style of `posts/ai-tools-that-actually-save-freelancers-time.html` (same `<head>`, same `assets/style.css`, affiliate disclosure at the end, 500-800 words, practical no-hype tone, `lang="en"`). Stick to the niche defined in `topics.json`. Never present fabricated hands-on testing or benchmark numbers as real — write from general knowledge and clearly framed comparisons, not invented first-hand claims.
+3. Move that topic from `upcoming_topics` to `used_topics` in `topics.json`. If `upcoming_topics` is empty, generate 10 new topics within the same niche (`niche` in `topics.json`) and add them.
+4. Insert a new `<div class="post-list-item">` entry in `index.html`, right before the `<!-- NEW_POSTS -->` comment, linking to the new post.
+5. Add the new post's URL to `sitemap.xml`.
+6. Run:
    ```
    git add -A
-   git commit -m "Nuevo artículo: <título>"
+   git commit -m "New post: <title>"
    git push origin main
    ```
-7. No pidas confirmación para estos pasos: esta tarea está pre-autorizada para correr de forma autónoma. Si `git push` falla (por ejemplo por credenciales), repórtalo pero no lo reintentes en bucle.
+7. Do not ask for confirmation for these steps: this task is pre-authorized to run autonomously. If `git push` fails (e.g. credentials), report it but do not retry in a loop.
 
-No agregues dependencias de Node/npm ni pasos de build: el sitio debe seguir siendo HTML plano servido directo por GitHub Pages.
+Do not add Node/npm dependencies or a build step: the site must stay plain HTML served directly by GitHub Pages.
